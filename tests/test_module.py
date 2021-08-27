@@ -1,8 +1,8 @@
 import unittest
 
-import stactools.ephemeral
+import stactools.sentinel3_slstr
 
 
 class TestModule(unittest.TestCase):
     def test_version(self):
-        self.assertIsNotNone(stactools.ephemeral.__version__)
+        self.assertIsNotNone(stactools.sentinel3_slstr.__version__)
