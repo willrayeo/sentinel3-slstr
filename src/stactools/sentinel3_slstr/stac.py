@@ -20,6 +20,7 @@ from .properties import (
     fill_sar_properties,
     fill_sat_properties,
     fill_proj_properties,
+    fill_eo_properties
 )
 
 from .bands import image_asset_from_href
@@ -60,8 +61,9 @@ def create_item(granule_href: str) -> pystac.Item:
     sat = SatExtension.ext(item, add_if_missing=True)
     fill_sat_properties(sat, metalinks.product_metadata_href)
 
-    # # eo
-    # EOExtension.ext(item, add_if_missing=True)
+    # eo
+    eo = EOExtension.ext(item, add_if_missing=True)
+    fill_eo_properties(eo, metalinks.product_metadata_href)
 
     # # proj
     # proj = ProjectionExtension.ext(item, add_if_missing=True)

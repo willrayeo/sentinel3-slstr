@@ -62,6 +62,14 @@ def fill_sat_properties(sat_ext, href):
 
     sat_ext.relative_orbit = int(
         root.findall(".//sentinel-safe:relativeOrbitNumber")[0].text)
+    
+def fill_eo_properties(eo_ext, href):
+    # Read meta file
+    root = XmlElement.from_file(href)
+    
+    eo_ext.cloud_cover = float(
+        root.find_attr("percentage", ".//sentinel3:cloudyPixels")
+    )
 
 
 def fill_proj_properties(proj_ext, meta_links, product_meta):
