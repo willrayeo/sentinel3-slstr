@@ -34,26 +34,6 @@ SENTINEL_PROVIDER = pystac.Provider(
 SAFE_MANIFEST_ASSET_KEY = "safe-manifest"
 
 SENTINEL_SLSTR_BANDS = {
-    'B01':
-    Band.create(name='B01',
-                common_name='coastal',
-                description='Band 1 - Coastal aerosol',
-                center_wavelength=0.443,
-                full_width_half_max=0.027),
-    'B02':
-    Band.create(name='B02',
-                common_name='blue',
-                description='Band 2 - Blue',
-                center_wavelength=0.490,
-                full_width_half_max=0.098),
-    'B03':
-    Band.create(name='B03',
-                common_name='green',
-                description='Band 3 - Green',
-                center_wavelength=0.560,
-                full_width_half_max=0.045),
-}
-SENTINEL_SLSTR_BANDS = {
     'S01':
     Band.create(name='S1',
                 description='Band 1 - Cloud screening, vegetation monitoring, aerosol',
@@ -191,7 +171,7 @@ SENTINEL_OLCI_BANDS = {
     Band.create(name='Oa16',
                 description='Band 16 - Atmospheric / aerosol correction',
                 center_wavelength=778.75,
-                full_width_half_max=15),
+                bandwidth=15),
     'Oa17':
     Band.create(name='Oa17',
                 description='Band 17 - Atmospheric / aerosol correction, clouds, pixel co-registration',
@@ -201,7 +181,7 @@ SENTINEL_OLCI_BANDS = {
     Band.create(name='Oa18',
                 description='Band 18 - Water vapour absorption reference. Common reference band with SLSTR. Vegetation monitoring',
                 center_wavelength=885,
-                full_width_half_max=10),
+                bandwidth=10),
     'Oa19':
     Band.create(name='Oa19',
                 description='Band 19 - Water vapour absorption, vegetation monitoring (maximum REFLECTANCE)',
